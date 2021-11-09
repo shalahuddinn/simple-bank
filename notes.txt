@@ -1,0 +1,9 @@
+# How do I install golang-migrate on Windows 10:
+go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+# migrate
+migrate -path db/migration -database "postgresql://root:root@172.31.171.137:5432/simple_bank?sslmode=disable" -verbose up
+
+# install sqlc
+go install github.com/kyleconroy/sqlc/cmd/sqlc@latestsql
