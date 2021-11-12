@@ -6,4 +6,7 @@ go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@lat
 migrate -path db/migration -database "postgresql://root:root@172.31.171.137:5432/simple_bank?sslmode=disable" -verbose up
 
 # install sqlc
-go install github.com/kyleconroy/sqlc/cmd/sqlc@latestsql
+go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+
+# penyebab deadlock
+tabel transfer ada foreign ke tabel account. update di account akan mempengaruhi transfer
